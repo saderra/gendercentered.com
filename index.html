@@ -219,6 +219,22 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-ENYMXXEP07');
+  gtag('config', 'AW-11118782788');
+</script>
+<!-- Event snippet for Website lead conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11118782788/n1F0CLeX8pEYEMTS7LUp',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
 <!-- Google tag (gtag.js) end -->
 <!-- Fathom - beautiful, simple website analytics -->
@@ -378,6 +394,9 @@
                link.closest('.cta') ? 'Bottom CTA' : 'Hero';
     if (typeof fathom !== 'undefined') {
       fathom.trackEvent(store + ' click - ' + spot);
+    }
+    if (typeof gtag_report_conversion === 'function') {
+      gtag_report_conversion(); // links open in a new tab, so no redirect URL needed
     }
     if (typeof gtag === 'function') {
       gtag('event', 'buy_link_click', {
