@@ -212,6 +212,15 @@
     :root{--bw:230px;--bh:368px;--thick:36px}
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENYMXXEP07"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ENYMXXEP07');
+</script>
+<!-- Google tag (gtag.js) end -->
 <!-- Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="CHTQGQPQ" defer></script>
 <!-- / Fathom -->
@@ -363,11 +372,20 @@
 <script>
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
-    if (!link || typeof fathom === 'undefined') return;
+    if (!link) return;
     var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
     var spot = link.classList.contains('jump') ? 'Header' :
                link.closest('.cta') ? 'Bottom CTA' : 'Hero';
-    fathom.trackEvent(store + ' click - ' + spot);
+    if (typeof fathom !== 'undefined') {
+      fathom.trackEvent(store + ' click - ' + spot);
+    }
+    if (typeof gtag === 'function') {
+      gtag('event', 'buy_link_click', {
+        store: store,
+        placement: spot,
+        link_url: link.href
+      });
+    }
   });
 </script>
 </body>
