@@ -212,6 +212,9 @@
     :root{--bw:230px;--bh:368px;--thick:36px}
   }
 </style>
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="CHTQGQPQ" defer></script>
+<!-- / Fathom -->
 </head>
 <body>
 <div class="shell">
@@ -357,5 +360,15 @@
   </footer>
 
 </div>
+<script>
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
+    if (!link || typeof fathom === 'undefined') return;
+    var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
+    var spot = link.classList.contains('jump') ? 'Header' :
+               link.closest('.cta') ? 'Bottom CTA' : 'Hero';
+    fathom.trackEvent(store + ' click - ' + spot);
+  });
+</script>
 </body>
 </html>
