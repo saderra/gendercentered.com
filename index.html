@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gender Centered — A Practical Path Through the Transgender Divide | Dr. Corinne Votaw-Freer</title>
-<meta name="description" content="A practical path through the transgender divide. Sports, bathrooms, biology, schools, and medicine, examined honestly by a psychologist who has lived on both sides of the argument.">
+<meta name="description" content="A practical path through the transgender divide. Rapid onset gender dysphoria, sports, bathrooms, and biology, examined honestly by a psychologist who has lived on both sides of the argument.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -167,6 +167,32 @@
   .q p{color:#3A3D44;font-size:1rem}
   .q .verdict{display:block;margin-top:14px;font-style:italic;color:var(--navy);font-weight:500}
 
+  /* ---------- ROGD feature ---------- */
+  .rogd{padding:84px 0;border-top:1px solid var(--line);background:var(--paper-deep)}
+  .rogd .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
+  .rogd p{color:#33363D;margin-bottom:18px;max-width:38rem}
+  .rogd .verdict{
+    border-left:4px solid var(--crimson);padding:6px 0 6px 20px;margin:26px 0 0;
+    font-style:italic;color:var(--navy);font-weight:500;font-size:1.12rem;max-width:34rem;
+  }
+  .rogd-panel{
+    background:var(--paper);border:1px solid var(--line);padding:32px 30px;
+    position:sticky;top:24px;
+  }
+  .rogd-panel h3{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+    letter-spacing:.08em;font-size:1.05rem;margin-bottom:16px;color:var(--navy);
+  }
+  .rogd-panel ul{list-style:none;margin-bottom:26px}
+  .rogd-panel li{
+    padding:10px 0 10px 22px;border-bottom:1px solid var(--line);
+    position:relative;font-size:.98rem;color:#33363D;
+  }
+  .rogd-panel li::before{
+    content:"";position:absolute;left:0;top:17px;width:8px;height:8px;background:var(--crimson);
+  }
+  .rogd-panel li:nth-child(even)::before{background:var(--navy)}
+
   /* ---------- statement band ---------- */
   .band{background:var(--navy);color:var(--paper);padding:88px 0;position:relative;overflow:hidden}
   .band::after{
@@ -222,6 +248,8 @@
     .book-stage{order:-1}
     .q-grid{grid-template-columns:1fr}
     .inside .wrap{grid-template-columns:1fr;gap:48px}
+    .rogd .wrap{grid-template-columns:1fr;gap:40px}
+    .rogd-panel{position:static}
     :root{--bw:230px;--bh:368px;--thick:36px}
   }
 </style>
@@ -304,6 +332,46 @@ function gtag_report_conversion(url) {
       </div>
     </div>
   </header>
+
+  <!-- ================= ROGD FEATURE ================= -->
+  <section class="rogd" id="rogd">
+    <div class="wrap">
+      <div>
+        <div class="sec-head">
+          <span class="eyebrow">The term you may have searched for</span>
+          <h2 class="disp"><span class="a">Rapid Onset</span> <span class="b">Gender Dysphoria</span></h2>
+        </div>
+        <p>In 2018, researcher Lisa Littman published a study describing something thousands of
+           parents thought they were seeing: a teenager, often a girl, announcing a transgender
+           identity seemingly out of nowhere, often alongside friends doing the same, often after
+           long hours online. She called it rapid onset gender dysphoria, and for many families
+           the description fit like a key in a lock.</p>
+        <p>The study also had real problems. It surveyed parents rather than teens or clinicians,
+           and it recruited those parents from websites already skeptical of transition. The journal
+           issued a correction. No major medical body recognizes ROGD as a diagnosis. One side
+           now treats the term as settled science. The other treats it as debunked bigotry.</p>
+        <p>Both reactions skip the most important question: what were those parents actually
+           seeing? Gender Centered takes the observation seriously without taking the hypothesis
+           on faith. What looks like rapid onset from the outside is often years in the making on
+           the inside, because a teen's private wrestling usually starts long before the
+           announcement that blindsides the family. Onset and announcement are not the same
+           thing, and confusing them has consequences in both directions.</p>
+        <p class="verdict">The parents are not imagining things. The critics are not inventing
+           flaws. Neither one has the whole story, and your kid deserves the whole story.</p>
+      </div>
+      <aside class="rogd-panel">
+        <h3>In the book</h3>
+        <ul>
+          <li>The Littman study, what it claimed, and what it could not show</li>
+          <li>The correction, the critiques, and what survived them</li>
+          <li>Why so many families went looking for this term</li>
+          <li>Onset versus announcement: what clinicians actually see</li>
+          <li>What to do while the research catches up</li>
+        </ul>
+        <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Buy it on Amazon</a>
+      </aside>
+    </div>
+  </section>
 
   <!-- ================= THE QUESTIONS ================= -->
   <section class="questions">
@@ -404,6 +472,7 @@ function gtag_report_conversion(url) {
     if (!link) return;
     var store = 'Amazon';
     var spot = link.classList.contains('jump') ? 'Header' :
+               link.closest('.rogd') ? 'ROGD Section' :
                link.closest('.cta') ? 'Bottom CTA' : 'Hero';
     if (typeof fathom !== 'undefined') {
       fathom.trackEvent(store + ' click - ' + spot);
