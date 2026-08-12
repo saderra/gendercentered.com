@@ -66,13 +66,16 @@
 
   /* ---------- top strip ---------- */
   .topbar{border-bottom:1px solid var(--line);}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
-  .topbar .name{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;font-weight:600;color:var(--navy)}
-  .topbar a.jump{
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+  .topbar .name{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:1.05rem;font-weight:600;color:var(--navy);text-decoration:none}
+  .topnav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+  .topnav a{
     font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;
-    color:var(--crimson);text-decoration:none;border-bottom:2px solid var(--crimson);padding-bottom:2px;
+    color:var(--navy);text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent;
   }
-  .topbar a.jump:hover{color:var(--crimson-deep);border-color:var(--crimson-deep)}
+  .topnav a:hover{border-color:var(--navy)}
+  .topnav a.jump{color:var(--crimson);border-bottom:2px solid var(--crimson)}
+  .topnav a.jump:hover{color:var(--crimson-deep);border-color:var(--crimson-deep)}
 
   /* ---------- hero ---------- */
   .hero{padding:72px 0 88px;overflow:hidden}
@@ -305,8 +308,12 @@ function gtag_report_conversion(url) {
 
   <div class="topbar">
     <div class="wrap">
-      <span class="name">Dr. Corinne Votaw-Freer</span>
-      <a class="jump" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get the book</a>
+      <a class="name" href="gender-centered-landing.html">Dr. Corinne Votaw-Freer</a>
+      <nav class="topnav">
+        <a href="therapy.html">Therapy</a>
+        <a href="contact.html">Contact</a>
+        <a class="jump" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get the book</a>
+      </nav>
     </div>
   </div>
 
