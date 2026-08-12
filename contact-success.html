@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent | Dr. Corinne Votaw-Freer</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EFEA;--paper-deep:#E7E4DD;--ink:#16181D;
+    --navy:#243A5E;--crimson:#A22633;--crimson-deep:#871E2A;
+    --stone:#8D897F;--line:#D6D2C8;--white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Lora',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .disp{font-family:'Oswald',sans-serif;text-transform:uppercase;line-height:.95}
+  .eyebrow{font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:500;font-size:.8rem;letter-spacing:.22em;color:var(--crimson);display:block;margin-bottom:12px}
+  main{padding:110px 0}
+  h1{font-size:clamp(2rem,4.4vw,3.4rem);font-weight:700;margin-bottom:18px}
+  h1 .a{color:var(--navy)}
+  h1 .b{color:var(--crimson)}
+  p{color:#33363D;max-width:38rem;margin-bottom:26px}
+  .btn{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+    letter-spacing:.1em;font-size:.92rem;text-decoration:none;
+    padding:16px 28px;display:inline-flex;border-radius:2px;margin-right:12px;margin-bottom:12px;
+  }
+  .btn-solid{background:var(--crimson);color:var(--white);box-shadow:0 3px 0 var(--crimson-deep)}
+  .btn-solid:hover{background:var(--crimson-deep)}
+  .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:var(--paper)}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ENYMXXEP07"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ENYMXXEP07');
+  gtag('config', 'AW-11118782788');
+</script>
+<!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="CHTQGQPQ" defer></script>
+<!-- / Fathom -->
+</head>
+<body>
+<main>
+  <div class="wrap">
+    <span class="eyebrow">Message sent</span>
+    <h1 class="disp"><span class="a">Got it.</span> <span class="b">Talk soon.</span></h1>
+    <p>Your message is on its way, and I will get back to you as soon as I can. In the meantime,
+       the book covers the approach behind everything I do clinically.</p>
+    <a class="btn btn-solid" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get Gender Centered on Amazon</a>
+    <a class="btn btn-outline" href="index.html">Back to the site</a>
+  </div>
+</main>
+<script>
+  if (typeof fathom !== 'undefined') { /* pageview tracks automatically */ }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href*="amzn.to"]');
+    if (!link) return;
+    if (typeof fathom !== 'undefined') { fathom.trackEvent('Amazon click - Contact Success'); }
+    if (typeof gtag === 'function') {
+      gtag('event', 'buy_link_click', { store: 'Amazon', placement: 'Contact Success', link_url: link.href });
+    }
+  });
+</script>
+</body>
+</html>
