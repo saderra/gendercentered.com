@@ -57,18 +57,20 @@
     <h1 class="disp"><span class="a">Got it.</span> <span class="b">Talk soon.</span></h1>
     <p>Your message is on its way, and I will get back to you as soon as I can. In the meantime,
        the book covers the approach behind everything I do clinically.</p>
-    <a class="btn btn-solid" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get Gender Centered on Amazon</a>
+    <a class="btn btn-solid" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get it on Amazon</a>
+    <a class="btn btn-outline" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Get it at Barnes &amp; Noble</a>
     <a class="btn btn-outline" href="index.html">Back to the site</a>
   </div>
 </main>
 <script>
   if (typeof fathom !== 'undefined') { /* pageview tracks automatically */ }
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href*="amzn.to"]');
+    var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
     if (!link) return;
-    if (typeof fathom !== 'undefined') { fathom.trackEvent('Amazon click - Contact Success'); }
+    var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
+    if (typeof fathom !== 'undefined') { fathom.trackEvent(store + ' click - Contact Success'); }
     if (typeof gtag === 'function') {
-      gtag('event', 'buy_link_click', { store: 'Amazon', placement: 'Contact Success', link_url: link.href });
+      gtag('event', 'buy_link_click', { store: store, placement: 'Contact Success', link_url: link.href });
     }
   });
 </script>

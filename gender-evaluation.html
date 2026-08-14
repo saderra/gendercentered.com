@@ -224,7 +224,10 @@
   <section class="band">
     <div class="wrap">
       <p class="big">Want to understand the approach before you book? It's all in the book.</p>
-      <a class="btn btn-outline" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get Gender Centered on Amazon</a>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-outline" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get it on Amazon</a>
+        <a class="btn btn-outline" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Get it at Barnes &amp; Noble</a>
+      </div>
     </div>
   </section>
 
@@ -235,14 +238,15 @@
 </div>
 <script>
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href*="amzn.to"]');
+    var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
     if (!link) return;
-    var spot = link.closest('.band') ? 'Therapy Page Band' : 'Therapy Page Header';
+    var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
+    var spot = link.closest('.band') ? 'Evaluation Page Band' : 'Evaluation Page Header';
     if (typeof fathom !== 'undefined') {
-      fathom.trackEvent('Amazon click - ' + spot);
+      fathom.trackEvent(store + ' click - ' + spot);
     }
     if (typeof gtag === 'function') {
-      gtag('event', 'buy_link_click', { store: 'Amazon', placement: spot, link_url: link.href });
+      gtag('event', 'buy_link_click', { store: store, placement: spot, link_url: link.href });
     }
   });
 </script>

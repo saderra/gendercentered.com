@@ -347,6 +347,10 @@ function gtag_report_conversion(url) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
             Buy it on Amazon
           </a>
+          <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+            Buy at Barnes &amp; Noble
+          </a>
         </div>
         <p class="cred"><b>Dr. Corinne Votaw-Freer</b> &nbsp;&middot;&nbsp; Intersex &middot; Clinical Psychologist &middot; Christian &middot; Former Conservative Operative</p>
       </div>
@@ -483,9 +487,10 @@ function gtag_report_conversion(url) {
     <div class="wrap">
       <img class="mini" src="gender-centered-cover.jpg" alt="">
       <h2 class="disp"><span class="a">Read it.</span> <span class="b">Then decide.</span></h2>
-      <p>Available now in paperback and ebook.</p>
+      <p>Available now in paperback and ebook. Pick your bookstore below.</p>
       <div class="btn-row">
         <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Buy it on Amazon</a>
+        <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Buy at Barnes &amp; Noble</a>
       </div>
     </div>
   </section>
@@ -497,9 +502,9 @@ function gtag_report_conversion(url) {
 </div>
 <script>
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href*="amzn.to"]');
+    var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
     if (!link) return;
-    var store = 'Amazon';
+    var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
     var spot = link.classList.contains('jump') ? 'Header' :
                link.closest('.rogd') ? 'ROGD Section' :
                link.closest('.cta') ? 'Bottom CTA' : 'Hero';
