@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://gendercentered.com/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <image:image>
+      <image:loc>https://gendercentered.com/gender-centered-cover.jpg</image:loc>
+      <image:title>Gender Centered: A Practical Path Through the Transgender Divide</image:title>
+      <image:caption>Cover of Gender Centered by Dr. Corinne Votaw-Freer</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gendercentered.com/gender-evaluation.html</loc>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://gendercentered.com/contact.html</loc>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+
+</urlset>
