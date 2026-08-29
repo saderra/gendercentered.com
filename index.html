@@ -160,7 +160,6 @@
   .cred b{color:var(--navy);font-weight:600}
 
   /* buttons */
-  .btn-row{display:flex;flex-wrap:wrap;gap:14px}
   .btn{
     font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
     letter-spacing:.1em;font-size:.92rem;text-decoration:none;
@@ -168,11 +167,31 @@
     border-radius:2px;transition:transform .12s ease,background .12s ease,color .12s ease;
   }
   .btn:active{transform:translateY(1px)}
-  .btn-amazon{background:var(--crimson);color:var(--white);box-shadow:0 3px 0 var(--crimson-deep)}
-  .btn-amazon:hover{background:var(--crimson-deep)}
+  .btn svg{flex:none}
+
+  /* primary: order direct */
+  .btn-ingram{
+    background:var(--crimson);color:var(--white);
+    box-shadow:0 3px 0 var(--crimson-deep);
+    padding:19px 34px;font-size:1.02rem;
+  }
+  .btn-ingram:hover{background:var(--crimson-deep)}
+  /* secondary retailers */
+  .btn-amazon{background:var(--navy);color:var(--paper);box-shadow:0 3px 0 var(--navy-deep)}
+  .btn-amazon:hover{background:var(--navy-deep)}
   .btn-bn{background:transparent;color:var(--navy);border:2px solid var(--navy)}
   .btn-bn:hover{background:var(--navy);color:var(--paper)}
-  .btn svg{flex:none}
+
+  /* buy block */
+  .buy-flag{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Oswald',sans-serif;text-transform:uppercase;font-weight:600;
+    letter-spacing:.18em;font-size:.72rem;color:var(--crimson);margin-bottom:12px;
+  }
+  .buy-flag::before{content:"";width:20px;height:2px;background:var(--crimson);flex:none}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn-row.alt{margin-top:16px;gap:12px}
+  .btn-row.alt .btn{padding:13px 22px;font-size:.82rem}
 
   /* ---------- section headers (two-tone device from the cover) ---------- */
   .sec-head{margin-bottom:44px}
@@ -225,6 +244,13 @@
     content:"";position:absolute;left:0;top:17px;width:8px;height:8px;background:var(--crimson);
   }
   .rogd-panel li:nth-child(even)::before{background:var(--navy)}
+  .rogd-panel .btn-ingram{width:100%;justify-content:center;padding:17px 20px;font-size:.92rem}
+  .panel-alt{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.12em;
+    font-size:.72rem;color:var(--stone);margin-top:14px;line-height:1.8;
+  }
+  .panel-alt a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+  .panel-alt a:hover{border-color:var(--navy)}
 
   /* ---------- statement band ---------- */
   .band{background:var(--navy);color:var(--paper);padding:88px 0;position:relative;overflow:hidden}
@@ -264,6 +290,8 @@
   .cta h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:10px}
   .cta h2 .a{color:var(--navy)}.cta h2 .b{color:var(--crimson)}
   .cta p{max-width:36rem;margin:0 auto 34px;color:#3A3D44}
+  .cta .buy{display:flex;flex-direction:column;align-items:center}
+  .cta .buy-flag{justify-content:center}
   .cta .btn-row{justify-content:center}
 
   footer{padding:34px 0;text-align:center}
@@ -284,6 +312,10 @@
     .rogd .wrap{grid-template-columns:1fr;gap:40px}
     .rogd-panel{position:static}
     :root{--bw:230px;--bh:368px;--thick:36px}
+  }
+  @media (max-width:560px){
+    .btn-ingram{width:100%;justify-content:center;padding:18px 20px}
+    .btn-row.alt .btn{flex:1 1 auto;justify-content:center}
   }
 </style>
 <!-- Google tag (gtag.js) -->
@@ -392,11 +424,27 @@ function gtag_report_conversion(url) {
           "bookFormat": "https://schema.org/Paperback",
           "inLanguage": "en",
           "author": { "@id": "https://gendercentered.com/#corinne" },
+          "offers": [
+            {
+              "@type": "Offer",
+              "url": "https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH",
+              "category": "purchase",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@type": "Organization", "name": "IngramSpark" }
+            },
+            {
+              "@type": "Offer",
+              "url": "https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063",
+              "category": "purchase",
+              "availability": "https://schema.org/InStock",
+              "seller": { "@type": "Organization", "name": "Barnes & Noble" }
+            }
+          ],
           "potentialAction": {
             "@type": "ReadAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063",
+              "urlTemplate": "https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH",
               "actionPlatform": [
                 "https://schema.org/DesktopWebPlatform",
                 "https://schema.org/MobileWebPlatform"
@@ -406,7 +454,7 @@ function gtag_report_conversion(url) {
               "@type": "Offer",
               "category": "purchase",
               "availability": "https://schema.org/InStock",
-              "seller": { "@type": "Organization", "name": "Barnes & Noble" }
+              "seller": { "@type": "Organization", "name": "IngramSpark" }
             }
           }
         },
@@ -463,7 +511,7 @@ function gtag_report_conversion(url) {
       <nav class="topnav">
         <a href="gender-evaluation.html">Gender Evaluation</a>
         <a href="contact.html">Contact</a>
-        <a class="jump" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get the book</a>
+        <a class="jump" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">Get the book</a>
       </nav>
     </div>
   </div>
@@ -493,15 +541,22 @@ function gtag_report_conversion(url) {
           This book walks through the actual science, the actual law, and the actual people,
           and shows you a way through that doesn't require you to hate anyone.
         </p>
-        <div class="btn-row" id="buy">
-          <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            Buy it on Amazon
-          </a>
-          <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">
+        <div class="buy" id="buy">
+          <span class="buy-flag">Best place to order</span>
+          <a class="btn btn-ingram" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
-            Buy at Barnes &amp; Noble
+            Order from IngramSpark
           </a>
+          <div class="btn-row alt">
+            <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              Also on Amazon
+            </a>
+            <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+              Also at Barnes &amp; Noble
+            </a>
+          </div>
         </div>
         <p class="cred"><b>Dr. Corinne Votaw-Freer</b> &nbsp;&middot;&nbsp; Intersex &middot; Clinical Psychologist &middot; Christian &middot; Former Conservative Operative</p>
       </div>
@@ -585,7 +640,11 @@ function gtag_report_conversion(url) {
           <li>Onset versus announcement: what clinicians actually see</li>
           <li>What to do while the research catches up</li>
         </ul>
-        <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Buy it on Amazon</a>
+        <a class="btn btn-ingram" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">Order from IngramSpark</a>
+        <p class="panel-alt">
+          Also on <a href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Amazon</a>
+          and at <a href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+        </p>
       </aside>
     </div>
   </section>
@@ -638,10 +697,14 @@ function gtag_report_conversion(url) {
     <div class="wrap">
       <img class="mini" src="gender-centered-cover.jpg" alt="">
       <h2 class="disp"><span class="a">Read it.</span> <span class="b">Then decide.</span></h2>
-      <p>Available now in paperback and ebook. Pick your bookstore below.</p>
-      <div class="btn-row">
-        <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Buy it on Amazon</a>
-        <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Buy at Barnes &amp; Noble</a>
+      <p>Available now in paperback and ebook. Order direct from IngramSpark, or pick another bookstore below.</p>
+      <div class="buy">
+        <span class="buy-flag">Best place to order</span>
+        <a class="btn btn-ingram" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">Order from IngramSpark</a>
+        <div class="btn-row alt">
+          <a class="btn btn-amazon" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Also on Amazon</a>
+          <a class="btn btn-bn" href="https://www.barnesandnoble.com/w/gender-centered-corinne-votaw/1151002063" target="_blank" rel="noopener">Also at Barnes &amp; Noble</a>
+        </div>
       </div>
     </div>
   </section>
@@ -653,9 +716,10 @@ function gtag_report_conversion(url) {
 </div>
 <script>
   document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
+    var link = e.target.closest('a[href*="ingramspark.com"], a[href*="amzn.to"], a[href*="barnesandnoble.com"]');
     if (!link) return;
-    var store = link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
+    var store = link.href.indexOf('ingramspark.com') > -1 ? 'IngramSpark' :
+                link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
     var spot = link.classList.contains('jump') ? 'Header' :
                link.closest('.rogd') ? 'ROGD Section' :
                link.closest('.cta') ? 'Bottom CTA' : 'Hero';
