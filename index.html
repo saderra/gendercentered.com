@@ -213,6 +213,8 @@
   .rogd{padding:84px 0;border-top:1px solid var(--line);background:var(--paper-deep)}
   .rogd .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
   .rogd p{color:#33363D;margin-bottom:18px;max-width:38rem}
+  .rogd p a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+  .rogd p a:hover{border-color:var(--navy)}
   .rogd .verdict{
     border-left:4px solid var(--crimson);padding:6px 0 6px 20px;margin:26px 0 0;
     font-style:italic;color:var(--navy);font-weight:500;font-size:1.12rem;max-width:34rem;
@@ -278,6 +280,8 @@
   }
   .inside li:nth-child(even)::before{background:var(--navy)}
   .inside li b{color:var(--ink);font-weight:600}
+  .inside li b a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+  .inside li b a:hover{color:var(--navy);border-color:var(--navy)}
   .about-author p{margin-bottom:16px;color:#33363D}
   .about-author .id-line{
     font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;
@@ -492,6 +496,45 @@ function gtag_report_conversion(url) {
       "isPartOf": { "@id": "https://gendercentered.com/#website" },
       "about": { "@id": "https://gendercentered.com/#book" },
       "primaryImageOfPage": "https://gendercentered.com/gender-centered-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://gendercentered.com/#faq",
+      "isPartOf": { "@id": "https://gendercentered.com/#webpage" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do trans women hold an advantage in women's sports?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The research is messier than either side wants you to know, and the answer changes depending on the sport, the athlete, and the age of transition. You deserve the data, not the chant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are bathroom access policies for transgender people a safety issue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is predator panic on one side and blanket dismissal on the other. The real questions are what the incident numbers actually say, what the law requires, and what a workable policy looks like for a school, a gym, or a church. There is a practical path, it just isn't on cable news."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is being transgender biological or social?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "From brain studies to intersex conditions to hormones in the womb, the biology is real, and it is more complicated than either camp admits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is rapid onset gender dysphoria (ROGD)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In 2018, researcher Lisa Littman published a study describing a teenager, often a girl, announcing a transgender identity seemingly out of nowhere, often alongside friends doing the same, often after long hours online, which she called rapid onset gender dysphoria. The study surveyed parents rather than teens or clinicians and recruited them from websites already skeptical of transition, and the journal issued a correction. No major medical body recognizes ROGD as a diagnosis. The parents are not imagining things, and the critics are not inventing flaws. Onset and announcement are not the same thing, and confusing them has consequences in both directions."
+          }
+        }
+      ]
     }
   ]
 }
@@ -509,6 +552,7 @@ function gtag_report_conversion(url) {
     <div class="wrap">
       <a class="name" href="index.html">Dr. Corinne Votaw-Freer</a>
       <nav class="topnav">
+        <a href="topics.html">Topics</a>
         <a href="gender-evaluation.html">Gender Evaluation</a>
         <a href="contact.html">Contact</a>
         <a class="jump" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">Get the book</a>
@@ -604,14 +648,15 @@ function gtag_report_conversion(url) {
           <span class="eyebrow">The term you may have searched for</span>
           <h2 class="disp"><span class="a">Rapid Onset</span> <span class="b">Gender Dysphoria</span></h2>
         </div>
-        <p>In 2018, researcher Lisa Littman published a study describing something thousands of
+        <p>In 2018, researcher Lisa Littman <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0202330" target="_blank" rel="noopener">published a study</a> describing something thousands of
            parents thought they were seeing: a teenager, often a girl, announcing a transgender
            identity seemingly out of nowhere, often alongside friends doing the same, often after
            long hours online. She called it rapid onset gender dysphoria, and for many families
            the description fit like a key in a lock.</p>
         <p>The study also had real problems. It surveyed parents rather than teens or clinicians,
            and it recruited those parents from websites already skeptical of transition. The journal
-           issued a correction. No major medical body recognizes ROGD as a diagnosis. One side
+           <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0214157" target="_blank" rel="noopener">issued a correction</a>. No major medical body recognizes ROGD as
+           <a href="https://wpath.org/wp-content/uploads/2024/11/WPATH-Position-on-Rapid-Onset-Gender-Dysphoria_9-4-2018.pdf" target="_blank" rel="noopener">a diagnosis</a>. One side
            now treats the term as settled science. The other treats it as debunked bigotry.</p>
         <p>Both reactions skip the most important question: what were those parents actually
            seeing? Gender Centered takes the observation seriously without taking the hypothesis
@@ -666,12 +711,12 @@ function gtag_report_conversion(url) {
           <h2 class="disp"><span class="a">What you'll</span> <span class="b">find here</span></h2>
         </div>
         <ul>
-          <li><b>Sports and fairness:</b> what the performance research does and does not show</li>
-          <li><b>Bathrooms and public space:</b> the incidents, the laws, and policies that work</li>
-          <li><b>The biology of gender:</b> brains, hormones, and intersex bodies</li>
-          <li><b>Kids, schools, and pronouns:</b> parental rights, disclosure, and book bans</li>
-          <li><b>Medicine under the microscope:</b> puberty blockers, surgery, and detransition</li>
-          <li><b>Faith and conscience:</b> holding conviction without contempt</li>
+          <li><b><a href="sports-fairness.html">Sports and fairness:</a></b> what the performance research does and does not show</li>
+          <li><b><a href="bathroom-policy.html">Bathrooms and public space:</a></b> the incidents, the laws, and policies that work</li>
+          <li><b><a href="biology-of-gender.html">The biology of gender:</a></b> brains, hormones, and intersex bodies</li>
+          <li><b><a href="kids-schools-pronouns.html">Kids, schools, and pronouns:</a></b> parental rights, disclosure, and book bans</li>
+          <li><b><a href="puberty-blockers-detransition.html">Medicine under the microscope:</a></b> puberty blockers, surgery, and detransition</li>
+          <li><b><a href="faith-and-conscience.html">Faith and conscience:</a></b> holding conviction without contempt</li>
         </ul>
       </div>
       <div class="about-author">
