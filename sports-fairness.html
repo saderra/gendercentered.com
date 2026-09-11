@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#243A5E">
 <title>Transgender Athletes and Fairness in Sports | Gender Centered</title>
 <meta name="description" content="What male puberty actually changes, what the newest performance data shows, and why the loudest voices in the trans-athlete debate keep missing the athletes in the middle.">
 <link rel="canonical" href="https://gendercentered.com/sports-fairness.html">
@@ -30,7 +31,7 @@
   :root{
     --paper:#F1EFEA;--paper-deep:#E7E4DD;--ink:#16181D;
     --navy:#243A5E;--navy-deep:#1B2C48;--crimson:#A22633;--crimson-deep:#871E2A;
-    --stone:#8D897F;--line:#D6D2C8;--white:#FFFFFF;
+    --stone:#66625A;--line:#D6D2C8;--white:#FFFFFF;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{font-family:'Lora',Georgia,serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -142,6 +143,21 @@
   gtag('config', 'G-ENYMXXEP07');
   gtag('config', 'AW-11118782788');
 </script>
+<!-- Google Ads conversion: fires on any buy-link click -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11118782788/n1F0CLeX8pEYEMTS7LUp',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 <!-- Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="CHTQGQPQ" defer></script>
 <!-- / Fathom -->
@@ -149,6 +165,26 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://gendercentered.com/#website",
+      "url": "https://gendercentered.com/",
+      "name": "Gender Centered",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://gendercentered.com/#corinne" }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://gendercentered.com/#book",
+      "name": "Gender Centered",
+      "alternateName": "Gender Centered: A Practical Path Through the Transgender Divide",
+      "url": "https://gendercentered.com/",
+      "image": "https://gendercentered.com/gender-centered-cover.jpg",
+      "isbn": "9798234157607",
+      "bookFormat": "https://schema.org/Paperback",
+      "inLanguage": "en",
+      "author": { "@id": "https://gendercentered.com/#corinne" }
+    },
     {
       "@type": "Article",
       "@id": "https://gendercentered.com/sports-fairness.html#article",
@@ -176,6 +212,7 @@
       "alternateName": ["Corinne Votaw", "Dr. Corinne Votaw-Freer"],
       "honorificPrefix": "Dr.",
       "jobTitle": "Psychologist",
+      "image": "https://gendercentered.com/corinne-votaw-freer.jpg",
       "description": "Psychologist and author of Gender Centered. Born intersex, formerly inside conservative politics, and in clinical practice with teens, adults, and families navigating gender questions.",
       "url": "https://gendercentered.com/",
       "sameAs": [
@@ -197,17 +234,17 @@
 
   <div class="topbar">
     <div class="wrap">
-      <a class="name" href="index.html">Dr. Corinne Votaw-Freer</a>
+      <a class="name" href="/">Dr. Corinne Votaw-Freer</a>
       <nav class="topnav">
         <a href="topics.html">Topics</a>
         <a href="gender-evaluation.html">Gender Evaluation</a>
         <a href="contact.html">Contact</a>
-        <a class="jump" href="https://amzn.to/4wMq1WV" target="_blank" rel="noopener">Get the book</a>
+        <a class="jump" href="https://shop.ingramspark.com/b/084?params=BDeZYp9XTMuzwe5TaJ77XxKEMTdJNWWDpUZV3lOZLwH" target="_blank" rel="noopener">Get the book</a>
       </nav>
     </div>
   </div>
 
-  <nav class="crumb wrap"><a href="index.html">Home</a> / <a href="topics.html">Topics</a> / Fairness in Sports</nav>
+  <nav class="crumb wrap"><a href="/">Home</a> / <a href="topics.html">Topics</a> / Fairness in Sports</nav>
 
   <header class="page-hero">
     <div class="wrap narrow">
@@ -359,6 +396,9 @@
                 link.href.indexOf('amzn.to') > -1 ? 'Amazon' : 'Barnes & Noble';
     if (typeof fathom !== 'undefined') {
       fathom.trackEvent(store + ' click - Sports Topic Page');
+    }
+    if (typeof gtag_report_conversion === 'function') {
+      gtag_report_conversion();
     }
     if (typeof gtag === 'function') {
       gtag('event', 'buy_link_click', { store: store, placement: 'Sports Topic Page', link_url: link.href });

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#243A5E">
 <title>Gender Centered: A Practical Path Through the Transgender Divide</title>
 <meta name="description" content="Gender Centered by Dr. Corinne Votaw-Freer. An intersex psychologist walks through the science, the law, and the people behind the transgender debate.">
 <link rel="canonical" href="https://gendercentered.com/">
@@ -37,7 +38,7 @@
     --navy-deep:#1B2C48;
     --crimson:#A22633;
     --crimson-deep:#871E2A;
-    --stone:#8D897F;
+    --stone:#66625A;
     --line:#D6D2C8;
     --white:#FFFFFF;
     --thick:44px;   /* book depth */
@@ -283,6 +284,8 @@
   .inside li b a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
   .inside li b a:hover{color:var(--navy);border-color:var(--navy)}
   .about-author p{margin-bottom:16px;color:#33363D}
+  .about-author .who{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:start}
+  .about-author .headshot{width:100%;height:auto;display:block;border:1px solid var(--line);box-shadow:10px 12px 0 rgba(36,58,94,.12)}
   .about-author .id-line{
     font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;
     color:var(--crimson);font-weight:600;margin-bottom:18px;
@@ -290,7 +293,7 @@
 
   /* ---------- final CTA ---------- */
   .cta{padding:96px 0;background:var(--paper-deep);border-top:1px solid var(--line);text-align:center}
-  .cta img.mini{width:150px;box-shadow:14px 18px 32px rgba(20,24,29,.28);margin-bottom:34px;transform:rotate(-2deg)}
+  .cta img.mini{width:150px;height:auto;box-shadow:14px 18px 32px rgba(20,24,29,.28);margin-bottom:34px;transform:rotate(-2deg)}
   .cta h2{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:10px}
   .cta h2 .a{color:var(--navy)}.cta h2 .b{color:var(--crimson)}
   .cta p{max-width:36rem;margin:0 auto 34px;color:#3A3D44}
@@ -318,6 +321,8 @@
     :root{--bw:230px;--bh:368px;--thick:36px}
   }
   @media (max-width:560px){
+    .about-author .who{grid-template-columns:1fr}
+    .about-author .headshot{max-width:200px}
     .btn-ingram{width:100%;justify-content:center;padding:18px 20px}
     .btn-row.alt .btn{flex:1 1 auto;justify-content:center}
   }
@@ -373,6 +378,7 @@ function gtag_report_conversion(url) {
       "alternateName": ["Corinne Votaw", "Dr. Corinne Votaw-Freer"],
       "honorificPrefix": "Dr.",
       "jobTitle": "Psychologist",
+      "image": "https://gendercentered.com/corinne-votaw-freer.jpg",
       "description": "Psychologist and author of Gender Centered. Born intersex, formerly inside conservative politics, and in clinical practice with teens, adults, and families navigating gender questions.",
       "url": "https://gendercentered.com/",
       "sameAs": [
@@ -545,12 +551,12 @@ function gtag_report_conversion(url) {
 
   <div class="announce">
     Looking for a therapist who literally wrote the book on gender therapy?
-    <a href="https://corinnefreer.com" target="_blank" rel="noopener">Work with Dr.&nbsp;Votaw-Freer</a>
+    <a href="gender-evaluation.html">Work with Dr.&nbsp;Votaw-Freer</a>
   </div>
 
   <div class="topbar">
     <div class="wrap">
-      <a class="name" href="index.html">Dr. Corinne Votaw-Freer</a>
+      <a class="name" href="/">Dr. Corinne Votaw-Freer</a>
       <nav class="topnav">
         <a href="topics.html">Topics</a>
         <a href="gender-evaluation.html">Gender Evaluation</a>
@@ -563,9 +569,9 @@ function gtag_report_conversion(url) {
   <!-- ================= HERO ================= -->
   <header class="hero">
     <div class="wrap">
-      <div class="book-stage" aria-hidden="false">
+      <div class="book-stage">
         <div class="book">
-          <div class="face front"><img src="gender-centered-cover.jpg" alt="Gender Centered book cover: A Practical Path Through the Transgender Divide, by Dr. Corinne Votaw-Freer"></div>
+          <div class="face front"><img src="gender-centered-cover.jpg" width="520" height="832" fetchpriority="high" decoding="async" alt="Gender Centered book cover: A Practical Path Through the Transgender Divide, by Dr. Corinne Votaw-Freer"></div>
           <div class="face back"></div>
           <div class="face spine"><span>Gender Centered &middot; Votaw-Freer</span></div>
           <div class="face pages" aria-hidden="true"></div>
@@ -724,6 +730,9 @@ function gtag_report_conversion(url) {
           <span class="eyebrow">About the author</span>
           <h2 class="disp"><span class="a">Who Is</span> <span class="b">Dr. Corinne Votaw-Freer</span></h2>
         </div>
+        <div class="who">
+          <img class="headshot" src="corinne-votaw-freer.jpg" width="480" height="600" loading="lazy" decoding="async" alt="Dr. Corinne Votaw-Freer">
+          <div>
         <p class="id-line">Intersex &middot; Clinical Psychologist &middot; Christian &middot; Former Conservative Operative</p>
         <p>Dr. Corinne Votaw-Freer has lived this debate from more angles than almost anyone
            writing about it. She was born intersex. She spent years inside conservative politics.
@@ -733,6 +742,8 @@ function gtag_report_conversion(url) {
         <p>She has watched both sides distort the evidence, and she wrote this book for the
            people caught in the middle: parents, teachers, pastors, coaches, and anyone who
            suspects the truth is more interesting than the talking points.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -740,7 +751,7 @@ function gtag_report_conversion(url) {
   <!-- ================= FINAL CTA ================= -->
   <section class="cta">
     <div class="wrap">
-      <img class="mini" src="gender-centered-cover.jpg" alt="">
+      <img class="mini" src="gender-centered-cover.jpg" width="520" height="832" loading="lazy" decoding="async" alt="">
       <h2 class="disp"><span class="a">Read it.</span> <span class="b">Then decide.</span></h2>
       <p>Available now in paperback and ebook. Order direct, or pick another bookstore below.</p>
       <div class="buy">
